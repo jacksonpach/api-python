@@ -1,0 +1,26 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "meu_projeto"
+version = "0.1.0"
+description = "Descrição do seu projeto"
+authors = ["Seu Nome <seu@email.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.103.1"
+pydantic = "^2.4.0"
+uvicorn = "^0.23.2"
+sqlalchemy = "^2.0.4"
+asyncmy = "^0.2.8"
+alembic = "^1.12.0"
+pymysql = "^1.1.0"
+python-decouple = "^3.8"
+unipath = "^1.1"
+dj-config-url = "^0.1.1"
+
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.2.1"
