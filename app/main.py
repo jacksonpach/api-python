@@ -1,4 +1,3 @@
-from decouple import config
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 

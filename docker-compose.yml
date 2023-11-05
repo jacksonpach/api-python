@@ -14,31 +14,17 @@ services:
     command: sh -c "uvicorn app.main:app --host 0.0.0.0 --reload"
     depends_on:
       - db
-      - pg
     env_file:
       - ./.env
 
-  pg:
+  db:
     image: postgres:14
     env_file:
       - ./.env
-    ports:
-      - "${POSTGRES_PORT}:5432"
     volumes:
       - db-data-pg:/var/lib/postgresql/data
-  db:
-    image: mysql:8
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_DATABASE: ${MYSQL_DB}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_PORT: ${MYSQL_PORT}
     ports:
-      - "3307:3306"
-    volumes:
-      - db-data:/var/lib/mysql
+      - "5432:5432"
 
 volumes:
-  db-data:
   db-data-pg:
