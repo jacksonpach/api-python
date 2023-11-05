@@ -1,7 +1,7 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-from app.models.user import User
-from app.schemas.user import UserCreate, UserUpdate
+from app.models.user_model import User
+from app.schemas.user_schema import UserCreate, UserUpdate
 
 
 class UserService:

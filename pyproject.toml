@@ -10,7 +10,7 @@ authors = ["Seu Nome <seu@email.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastapi = "^0.103.1"
+fastapi = "^0.104.0"
 pydantic = "^2.4.0"
 uvicorn = "^0.23.2"
 sqlalchemy = "^2.0.4"
@@ -20,6 +20,7 @@ pymysql = "^1.1.0"
 python-decouple = "^3.8"
 unipath = "^1.1"
 dj-config-url = "^0.1.1"
+asyncpg = "^0.28.0"
 
 
 [tool.poetry.dev-dependencies]

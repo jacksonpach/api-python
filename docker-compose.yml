@@ -9,12 +9,23 @@ services:
       - "22:22"
     volumes:
       - ./app:/app
+      - ./pyproject.toml:/pyproject.toml
+      - ./.env:/.env
     command: sh -c "uvicorn app.main:app --host 0.0.0.0 --reload"
     depends_on:
       - db
+      - pg
     env_file:
       - ./.env
 
+  pg:
+    image: postgres:14
+    env_file:
+      - ./.env
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - db-data-pg:/var/lib/postgresql/data
   db:
     image: mysql:8
     environment:
@@ -30,3 +41,4 @@ services:
 
 volumes:
   db-data:
+  db-data-pg:
